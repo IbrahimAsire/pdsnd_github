@@ -2,7 +2,7 @@
 
  HEAD
 ### Here I added some changes to the code such as:
-Formatting and adding a new feature to code and changing the name of one of the functions.
+Formatting and adding a new feature to code and changing the name of one of the functions .
 
 ### Date created
 Include the date you created this project and README file.
