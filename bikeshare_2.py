@@ -173,6 +173,7 @@ def display_raw(df):
             print("Please enter 'y' or 'n' !!")
 
 
+#Ask the user if he wants to re-explore
 def again():
     while True:
         restart = input('\nWould you like to restart? Enter y or n.\n').lower()
