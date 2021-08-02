@@ -28,6 +28,8 @@ def get_filters():
         city = input("Which city do you want to analyze, please choose chicago,"
                       " new york city or washington ?\n").lower()
         if city in CITY_DATA:
+            print("Great, looks like you choosed {} if you don't want that, "
+                  " make a restart.".format(city))
             break
         else:
             print("\nPlease write the correct city name!")
