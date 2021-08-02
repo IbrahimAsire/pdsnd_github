@@ -180,7 +180,7 @@ def display_raw(df):
                         "y/n: \n").lower()
         if display == "n":
             print("It's OK..")
-            again()
+            re_explore()
         elif display == "y":
             print(df[raw:raw+5])
             raw += 5
@@ -188,7 +188,7 @@ def display_raw(df):
             print("Please enter 'y' or 'n' !!")
 
 
-def again():
+def re_explore():
     while True:
         restart = input('\nWould you like to restart? Enter y or n.\n').lower()
         if restart == "y":
@@ -209,7 +209,7 @@ def main():
         trip_duration_stats(df)
         user_stats(df)
         display_raw(df)
-        again()
+        re_explore()
 
 
 if __name__ == "__main__":
