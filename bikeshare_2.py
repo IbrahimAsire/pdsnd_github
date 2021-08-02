@@ -158,6 +158,7 @@ def user_stats(df):
     print('-'*40)
 
 
+#To ask the user if wants to display five lines of data
 def display_raw(df):
     raw = 0
     while True:
