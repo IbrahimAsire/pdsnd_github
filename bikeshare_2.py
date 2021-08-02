@@ -6,7 +6,8 @@ CITY_DATA = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
               'washington': 'washington.csv' }
 months = ["january", "february", "march", "april", "may", "june", "all"]
-days = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday", "all"]
+days = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday",
+        "sunday", "all"]
 
 
 def get_filters():
@@ -15,28 +16,36 @@ def get_filters():
 
     Returns:
         (str) city - name of the city to analyze
-        (str) month - name of the month to filter by, or "all" to apply no month filter
-        (str) day - name of the day of week to filter by, or "all" to apply no day filter
+        (str) month - name of the month to filter by, or "all" to apply no month
+         filter
+        (str) day - name of the day of week to filter by, or "all" to apply no
+        day filter
     """
     name = input("Please type your first name!: ")
     print('Hello! {} Let\'s explore some US bikeshare data!\n'.format(name))
-    # get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
+    # get user input for city (chicago, new york city, washington). HINT: Use while loop to handle invalid inputs
     while True:
-        city = input("Which city do you want to analyze, please choose chicago, new york city or washington ?\n").lower()
+        city = input("Which city do you want to analyze, please choose chicago,"
+                      " new york city or washington ?\n").lower()
         if city in CITY_DATA:
+            print("Great, looks like you choosed {} if you don't want that, "
+                  " make a restart.".format(city))
             break
         else:
             print("\nPlease write the correct city name!")
     # get user input for month (all, january, february, ... , june)
     while True:
-        month = input("\nChoose a month from january TO june, OR write 'all' to see the whole six months?\n").lower()
+        month = input("\nChoose a month from january TO june, OR write 'all' "
+                      "to see the whole six months?\n").lower()
         if month in months:
             break
         else:
-            print("\nSorry, you have to write the name of one of the six months")
+            print("\nSorry, you have to write the name of one of the six "
+                  "months")
     # get user input for day of week (all, monday, tuesday, ... sunday)
     while True:
-        day = input("\nNow choose the day you prefer 'monday, 'tuesday' ... 'sunday' or type 'all' to view all?\n").lower()
+        day = input("\nNow choose the day you prefer 'monday, 'tuesday' ... "
+                    "'sunday' or type 'all' to view all?\n").lower()
         if day in days:
             break
         else:
@@ -52,8 +61,10 @@ def load_data(city, month, day):
 
     Args:
         (str) city - name of the city to analyze
-        (str) month - name of the month to filter by, or "all" to apply no month filter
-        (str) day - name of the day of week to filter by, or "all" to apply no day filter
+        (str) month - name of the month to filter by, or "all" to apply no month
+         filter
+        (str) day - name of the day of week to filter by, or "all" to apply no
+        day filter
     Returns:
         df - Pandas DataFrame containing city data filtered by month and day
     """
@@ -102,14 +113,18 @@ def station_stats(df):
     start_time = time.time()
 
     # display most commonly used start station
-    print("The most commonly used start station is ", df["Start Station"].mode()[0])
+    print("The most commonly used start station is ",
+          df["Start Station"].mode()[0])
 
     # display most commonly used end station
-    print("\nThe most commonly used end station is ", df["End Station"].mode()[0])
+    print("\nThe most commonly used end station is ",
+          df["End Station"].mode()[0])
 
     # display most frequent combination of start station and end station trip
-    combination_Station = (df["Start Station"] + ' & ' + df["End Station"]).mode()[0]
-    print("\nMost frequent combination of start station and end station trip is:", combination_Station)
+    combination_Station = (df["Start Station"] + ' & '
+                           + df["End Station"]).mode()[0]
+    print("\nMost frequent combination of start station and end station "
+          "trip is:", combination_Station)
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
@@ -162,10 +177,11 @@ def user_stats(df):
 def display_raw(df):
     raw = 0
     while True:
-        display = input("\nWould you like to see the next 5 raws data? y/n: \n").lower()
+        display = input("\nWould you like to see the next 5 raws data? "
+                        "y/n: \n").lower()
         if display == "n":
             print("It's OK..")
-            again()
+            re_explore()
         elif display == "y":
             print(df[raw:raw+5])
             raw += 5
@@ -173,8 +189,14 @@ def display_raw(df):
             print("Please enter 'y' or 'n' !!")
 
 
+ HEAD
 #Ask the user if he wants to re-explore
 def again():
+||||||| 18fdf01
+def again():
+
+def re_explore():
+refactoring
     while True:
         restart = input('\nWould you like to restart? Enter y or n.\n').lower()
         if restart == "y":
@@ -195,7 +217,7 @@ def main():
         trip_duration_stats(df)
         user_stats(df)
         display_raw(df)
-        again()
+        re_explore()
 
 
 if __name__ == "__main__":
