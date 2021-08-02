@@ -3,7 +3,7 @@
  HEAD
 ### Here I added some changes to the code such as:
 Formatting and adding a new feature to code and changing the name of one of the functions.
-||||||| 18fdf01
+
 ### Date created
 Include the date you created this project and README file.
 
@@ -18,7 +18,6 @@ Include the files used
 
 ### Credits
 It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
-
 
 ### Date created
 2-8-2021.
